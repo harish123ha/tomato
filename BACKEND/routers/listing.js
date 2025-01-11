@@ -7,6 +7,7 @@ const {
 } = require("../controllers/listingController");
 
 // const { storage } = require("../coludconfig.js");
+// const { storage } = require("../coludconfig.js");
 
 const multer = require("multer");
 const router = express.Router();
