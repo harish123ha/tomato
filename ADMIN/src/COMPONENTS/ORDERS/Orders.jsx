@@ -5,7 +5,7 @@ import axios from "axios";
 function Orders() {
   const getAllOrders = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/api/order/allOrders");
+      const res = await axios.get("https://food-del-backend-0pjs.onrender.com/api/order/allOrders");
       if (res.data.success) {
         console.log(res.data.data);
       } else {
