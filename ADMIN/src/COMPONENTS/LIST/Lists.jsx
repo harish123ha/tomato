@@ -4,7 +4,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { MdDelete } from "react-icons/md";
 function Lists() {
-  const url = "http://localhost:8080";
+  const url = "https://food-del-backend-0pjs.onrender.com";
   const [food_list, setFood_list] = useState([]);
 
   const foodData = async () => {
@@ -16,7 +16,7 @@ function Lists() {
 
   const deleteData = async (userId) => {
     console.log(userId);
-    const res = await axios.delete(`http://localhost:8080/api/food/${userId}`);
+    const res = await axios.delete(`https://food-del-backend-0pjs.onrender.com/api/food/${userId}`);
     if (res.data.success) {
       toast.success(res.data.message);
     } else {
