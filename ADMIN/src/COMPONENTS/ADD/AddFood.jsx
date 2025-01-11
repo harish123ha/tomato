@@ -29,7 +29,7 @@ function AddFood() {
       image: image,
     };
     const res = await axios.post(
-      "http://localhost:8080/api/food/add",
+      "https://food-del-backend-0pjs.onrender.com/api/food/add",
       formData,
       {
         headers: {
