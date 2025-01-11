@@ -1,6 +1,6 @@
 const Users = require("../models/user");
 const validator = require("validator");
-const bcrypt = require("bcrypt");
+
 const jwt = require("jsonwebtoken");
 
 // jwt screte creat tokem
@@ -26,11 +26,11 @@ signup = async (req, res) => {
         message: "Password must be at least 8 characters long",
       });
     }
-    const hashedPassword = await bcrypt.hash(password, 10);
+    // const hashedPassword = await bcrypt.hash(password, 10);
     const data = new Users({
       name: name,
       email: email,
-      password: hashedPassword,
+      password: password,
     });
 
     const savedData = await data.save();
@@ -58,7 +58,8 @@ login = async (req, res) => {
         message: "User does not exist please signup first",
       });
     }
-    const isValidPassword = await bcrypt.compare(password, userData.password);
+    // const isValidPassword = await bcrypt.compare(password, userData.password);
+    const isValidPassword = password === userData.password;
     if (!isValidPassword) {
       return res.json({ success: false, message: "Invalid password!" });
     } else {
