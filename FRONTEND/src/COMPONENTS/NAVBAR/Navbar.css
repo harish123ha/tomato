@@ -1,0 +1,42 @@
+.active {
+  border-bottom: 2px solid black;
+  cursor: pointer;
+}
+
+@media (max-width: 400px) {
+  .hide {
+    display: none;
+  }
+}
+.basket {
+  position: relative;
+}
+
+.dot {
+  width: 8px;
+  position: absolute;
+  background-color: tomato;
+  height: 8px;
+  border-radius: 50%;
+  top: 5px;
+  right: 120px;
+}
+
+.dot2 {
+  width: 8px;
+  position: absolute;
+  background-color: tomato;
+  height: 8px;
+  border-radius: 50%;
+  top: 5px;
+  right: 167px;
+}
+
+@media (max-width: 638px) {
+  .dot {
+    right: 80px;
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+  }
+}

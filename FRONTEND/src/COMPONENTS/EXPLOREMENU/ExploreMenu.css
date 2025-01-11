@@ -1,0 +1,30 @@
+.explore_menu_text {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  max-width: 60%;
+  color: #808080;
+}
+
+@media (max-width: 552px) {
+  .explore_menu_text {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    color: #808080;
+    font-size: 0.7rem;
+  }
+}
+
+.menu_content {
+  overflow-x: scroll;
+}
+
+.menu_content::-webkit-scrollbar {
+  display: none;
+}
+
+.active_explore {
+  border: 5px solid tomato;
+  border-radius: 50%;
+  padding: 2px;
+}

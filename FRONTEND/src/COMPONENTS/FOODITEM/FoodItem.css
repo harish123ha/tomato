@@ -1,0 +1,39 @@
+.food_item {
+  width: 100%;
+  margin: auto;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px #c5c5c5;
+}
+
+.food_item_image {
+  width: 100%;
+  border-radius: 15px 15px 0px 0px;
+}
+
+/*  counters */
+
+.image_container {
+  position: relative;
+}
+
+.image_container .add {
+  width: 35px;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.food_item_counters {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  border-radius: 50px;
+  background-color: white;
+  display: flex;
+  gap: 10px;
+  padding: 6px;
+  align-items: center;
+  cursor: pointer;
+}

@@ -1,0 +1,38 @@
+.banner {
+  background: url("/header_img.png") no-repeat;
+  background-size: contain;
+  position: relative;
+  height: 40vw;
+  margin: 1rem;
+}
+
+.banner-text {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.5vw;
+  bottom: 10%;
+  max-width: 50%;
+  left: 5vw;
+}
+
+.banner-text h1 {
+  font-size: max(4.5vw, 22px);
+}
+
+@media (max-width: 440px) {
+  .banner-text h1 {
+    font-size: max(2vw, 16px);
+  }
+}
+
+.banner-text p {
+  color: white;
+}
+
+@media (max-width: 810px) {
+  .hide_para {
+    display: none;
+  }
+}

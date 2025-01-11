@@ -1,0 +1,45 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr 1fr 1fr 1fr 0.2fr;
+  align-items: center;
+  gap: 5px;
+  text-align: start;
+}
+
+.promo_full_div {
+  flex: 1;
+}
+
+.promo-code_div {
+  display: flex;
+  justify-content: space-between;
+  background-color: #eaeaea;
+  border-radius: 10px;
+}
+
+.promo-code {
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  outline: none;
+  padding: 10px 5px;
+}
+
+@media (max-width: 748px) {
+  .total_cart {
+    display: block;
+    flex-direction: column-reverse;
+  }
+  .promo_full_div {
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: 492px) {
+  .cart_image {
+    width: 2.5rem;
+  }
+  .cart_name {
+    font-size: 13px !important;
+  }
+}

@@ -1,0 +1,27 @@
+@media (max-width: 883px) {
+  .sidebar_items p {
+    font-size: 13px;
+  }
+  .sidebar_items img {
+    width: 2.1rem;
+  }
+}
+
+@media (max-width: 766px) {
+  .sidebar_items p {
+    display: none;
+  }
+  .sidebar_items img {
+    width: 2.8rem;
+  }
+}
+
+.active {
+  background-color: #fff0ed;
+  border-color: tomato;
+}
+
+.sidebar_items:hover {
+  /* background-color: tomato; */
+  border-color: black;
+}

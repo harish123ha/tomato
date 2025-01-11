@@ -1,0 +1,27 @@
+.place_order {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8rem;
+  padding: 5rem;
+  /* margin-top: 5vw; */
+}
+
+@media (max-width: 840px) {
+  .place_order {
+    display: block;
+    padding: 1rem;
+  }
+  .left_section {
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+  }
+}
+
+@media (max-width: 1004px) {
+  .place_order {
+    gap: 2rem;
+  }
+  .delivery_text {
+    font-size: 2rem;
+  }
+}

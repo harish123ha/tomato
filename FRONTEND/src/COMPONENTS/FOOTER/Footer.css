@@ -1,0 +1,16 @@
+@media (max-width: 450px) {
+  .full_footer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .text_increase {
+    font-size: 0.7rem !important;
+  }
+}
+
+@media (max-width: 710px) {
+  .text_increase {
+    font-size: 0.5rem;
+  }
+}

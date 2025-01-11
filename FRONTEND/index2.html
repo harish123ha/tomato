@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rotating Border Button</title>
+    <style>
+      .rotate-border-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: 4px solid transparent;
+        border-image: linear-gradient(45deg, red, yellow, green, blue, purple) 1;
+        transition: border 0.5s;
+      }
+
+      .rotate-border-button:hover {
+        border-image: linear-gradient(45deg, red, yellow, green, blue, purple) 1;
+        animation: rotate-border 2s linear infinite;
+      }
+
+      @keyframes rotate-border {
+        0% {
+          border-image-source: linear-gradient(
+            45deg,
+            red,
+            yellow,
+            green,
+            blue,
+            purple
+          );
+        }
+        100% {
+          border-image-source: linear-gradient(
+            405deg,
+            red,
+            yellow,
+            green,
+            blue,
+            purple
+          );
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button class="rotate-border-button">Hover Me!</button>
+  </body>
+</html>
