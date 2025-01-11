@@ -59,6 +59,7 @@ login = async (req, res) => {
       });
     }
     // const isValidPassword = await bcrypt.compare(password, userData.password);
+    // const isValidPassword = await bcrypt.compare(password, userData.password);
     const isValidPassword = password === userData.password;
     if (!isValidPassword) {
       return res.json({ success: false, message: "Invalid password!" });
