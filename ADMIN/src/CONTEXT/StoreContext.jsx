@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
-  const url = "http://localhost:8080";
+  const url = "https://tomato-backend-1ga1.onrender.com";
 
   const contextValue = {
     url,
