@@ -5,6 +5,7 @@ import FoodItem from "../FOODITEM/FoodItem";
 import { StoreContext } from "../../CONTEXT/StoreContext";
 function FoodDisplay({ explore }) {
   const { food_list, url } = useContext(StoreContext);
+  console.log(food_list);
   return (
     <>
       <div>

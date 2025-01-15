@@ -7,7 +7,7 @@ export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
   const [token, setToken] = useState("");
-  const url = "https://food-del-backend-0pjs.onrender.com";
+  const url = "http://localhost:8080";
   const [cartItem, setCartItem] = useState({});
 
   //handle addtoCart and removefromcart with delay important loading cart with some dalay

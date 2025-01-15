@@ -4,9 +4,10 @@ import Navbar from "./COMPONENTS/NAVBAR/Navbar";
 import Sidebar from "./COMPONENTS/SIDEBAR/Sidebar";
 import List from "./PAGES/FOODLISTS/List";
 import Add from "./PAGES/ADD/Add";
-import Order from "./PAGES/ORDERS/Order";
+import Order from "./PAGES/ADMINORDERS/Order";
 import { ToastContainer, toast } from "react-toastify";
 import Harish from "./COMPONENTS/Harish";
+import UserAddress from "./PAGES/USERADDRESS/UserAddress";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/orders" element={<Order />}></Route>
         <Route path="/add" element={<Add />}></Route>
         <Route path="/" element={<Harish />}></Route>
+        <Route path="/address/:orderId" element={<UserAddress />}></Route>
       </Routes>
       <ToastContainer />
     </>

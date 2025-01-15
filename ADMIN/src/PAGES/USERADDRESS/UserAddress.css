@@ -1,0 +1,11 @@
+@media (max-width: 400px) {
+  .paddd {
+    padding-left: 17%;
+  }
+}
+
+@media (max-width: 371) {
+  .paddd {
+    padding-left: 15%;
+  }
+}

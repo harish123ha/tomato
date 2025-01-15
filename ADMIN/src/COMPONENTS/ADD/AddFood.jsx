@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { assets } from "../../../../FRONTEND/src/assets/admin_assets/assets";
 import "./AddFood.css";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { StoreContext } from "../../CONTEXT/StoreContext";
 
 function AddFood() {
+  const { url } = useContext(StoreContext);
   const [image, setImage] = useState(false);
 
   const {
@@ -28,15 +30,11 @@ function AddFood() {
       description: data.description,
       image: image,
     };
-    const res = await axios.post(
-      "https://food-del-backend-0pjs.onrender.com/api/food/add",
-      formData,
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      }
-    );
+    const res = await axios.post(url + "/api/food/add", formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
     if (res.data.success) {
       toast.success(res.data.message);
       setTimeout(() => {

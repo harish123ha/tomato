@@ -1,6 +1,6 @@
 const Users = require("../models/user");
 const validator = require("validator");
-
+const Listing = require("../models/listing");
 const jwt = require("jsonwebtoken");
 const Orders = require("../models/order");
 
@@ -29,7 +29,36 @@ placeOrder = async (req, res) => {
 userOrders = async (req, res) => {
   try {
     let userId = req.userId;
-    const allOrders = await Orders.find({ userId });
+    const userOrder = await Orders.find({ userId });
+    res.json({ success: true, message: "All orders", data: userOrder });
+  } catch (error) {
+    console.log(error);
+    res.json({
+      success: false,
+      messate: error.message,
+      message2: "Error getting all orders",
+    });
+  }
+};
+
+// delete order form admin panel okay
+
+deleteOrder = async (req, res) => {
+  try {
+    const id = req.params.id;
+    await Listing.findByIdAndDelete(id);
+    res.send({ success: true, message: "Food deleted successfully" });
+  } catch (error) {
+    console.log(error);
+    res.send({ success: false, message: error.message });
+  }
+};
+
+// getting all orders for admin panel
+
+getAllOrders = async (req, res) => {
+  try {
+    const allOrders = await Orders.find();
     res.json({ success: true, message: "All orders", data: allOrders });
   } catch (error) {
     console.log(error);
@@ -41,4 +70,27 @@ userOrders = async (req, res) => {
   }
 };
 
-module.exports = { placeOrder, userOrders };
+// getting address for a particular order in admin panel
+
+gettingAddress = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const address = await Orders.findById(id);
+    res.json({ success: true, message: "get address", data: address.address });
+  } catch (error) {
+    console.log(error);
+    res.json({
+      success: false,
+      message: "some error occured",
+      message2: error,
+    });
+  }
+};
+
+module.exports = {
+  placeOrder,
+  userOrders,
+  getAllOrders,
+  gettingAddress,
+  deleteOrder,
+};
