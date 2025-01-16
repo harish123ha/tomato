@@ -40,7 +40,7 @@ function UserOrder() {
 
   return (
     <>
-      <div className="h-[100vh] p-4">
+      <div className="min-h-screen p-4">
         <div>
           {loading ? (
             <div className="verify">
@@ -73,11 +73,14 @@ function UserOrder() {
 
                       <div className="text-center">
                         <span className="text-[tomato] text-lg">&#8226; </span>
-                        <span>Food Processing</span>
+                        <span>{order.status}</span>
                       </div>
 
                       <div className="">
-                        <button className="active:scale-95 bg-orange-400 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
+                        <button
+                          onClick={fetchUserOrders}
+                          className="active:scale-95 bg-orange-400 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
+                        >
                           Track Order
                         </button>
                       </div>

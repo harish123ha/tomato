@@ -5,11 +5,36 @@ import axios from "axios";
 import { assets } from "../../../../FRONTEND/src/assets/frontend_assets/assets";
 import { Link } from "react-router-dom";
 import { StoreContext } from "../../CONTEXT/StoreContext";
+import { toast } from "react-toastify";
 
 function Orders() {
   const { url } = useContext(StoreContext);
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  // status start here
+
+  const handleStatusChange = async (e, orderId) => {
+    // console.log(e.target.value);
+    // console.log(orderId);
+    try {
+      const status = e.target.value;
+      const response = await axios.put(`${url}/api/order/status`, {
+        id: orderId,
+        status: status,
+      });
+      if (response.data.success) {
+        toast.success(response.data.message);
+        await fetchUserOrders();
+      } else {
+        toast.error(response.data.message);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  // status clore here
 
   const fetchUserOrders = async () => {
     setLoading(true);
@@ -68,8 +93,18 @@ function Orders() {
                       <div>items:{order.items.length}</div>
 
                       <div className="text-center">
-                        <span className="text-[tomato] text-lg">&#8226; </span>
-                        <span>Food Processing</span>
+                        <select
+                          onChange={(event) =>
+                            handleStatusChange(event, order._id)
+                          }
+                          value={order.status}
+                        >
+                          <option value="Processing">Processing</option>
+                          <option value="Our For Delivery">
+                            Our For Delivery
+                          </option>
+                          <option value="Delivered">Delivered</option>
+                        </select>
                       </div>
 
                       <div className="">

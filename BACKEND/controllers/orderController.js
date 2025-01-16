@@ -87,10 +87,35 @@ gettingAddress = async (req, res) => {
   }
 };
 
+// update food staus like food processig , food is running or food delevired
+
+foodStatus = async (req, res) => {
+  try {
+    const { id } = req.body;
+    const { status } = req.body;
+    console.log(status);
+    const data = await Orders.findById(id);
+    if (!data) {
+      return res.json({ success: false, message: "Order not found" });
+    }
+    data.status = status;
+    await data.save();
+    res.json({
+      success: true,
+      message: "Status updated successfully",
+      data: data,
+    });
+  } catch (error) {
+    console.error(error);
+    res.json({ success: false, message: "Internal Server Error" });
+  }
+};
+
 module.exports = {
   placeOrder,
   userOrders,
   getAllOrders,
   gettingAddress,
   deleteOrder,
+  foodStatus,
 };

@@ -6,6 +6,7 @@ const {
   getAllOrders,
   gettingAddress,
   deleteOrder,
+  foodStatus,
 } = require("../controllers/orderController");
 const tokenMiddleware = require("../middleware/tokenMiddleware");
 
@@ -14,5 +15,6 @@ router.get("/userorder", tokenMiddleware, userOrders);
 router.get("/allorder", getAllOrders);
 router.get("/address/:id", gettingAddress);
 router.delete("/:id", deleteOrder);
+router.put("/status", foodStatus);
 
 module.exports = router;
